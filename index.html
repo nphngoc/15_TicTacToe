@@ -4,9 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Tik Tok Toe</title>
 </head>
 <body>
-    
+    <div id="all">
+        <div class="display announcer hide"></div>
+        <div id="container">
+            <div id="score">
+                <span id="score_X">0</span>
+                <span id="score_O">0</span>
+            </div>
+
+            <div id="turns">
+                <div>
+                    <svg height="150" width="150">
+                        <circle cx="50" cy="50" r="45" stroke='#2C8DFF' stroke-width="7" fill= none />
+                        <text class="turnsX turn" x="28" y="78" fill="#2C8DFF">0</text>
+                    </svg>
+                </div>
+                <div>
+                    <svg height="150" width="150">
+                        <circle cx="50" cy="50" r="45" stroke="#FF4F4F" stroke-width="7" fill= none />
+                        <text class="turnsO turn" x="28" y="78" fill="#FF4F4F">0</text>
+                    </svg>
+                </div>
+            </div>
+            
+            <div id="version2">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <button id="reset">Reset</button>
+            <button class="restart hide">Restart</button>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
 </body>
 </html>
