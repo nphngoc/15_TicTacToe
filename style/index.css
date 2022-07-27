@@ -65,7 +65,7 @@ svg {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 10px;
-    background-color: #10cc947f;
+    background-color: #FFE79E;
     width: 470px;
     height: 470px;
     padding: 15px;
@@ -77,15 +77,24 @@ svg {
     cursor: pointer;
 }
 
-#reset{
-    border-radius: 20px;
-    font-size: 30px;
-    margin: 30px 0px 0px 150px;
-    cursor: pointer;
-    width: 130px;
-    height: 70px;
-    background-color: antiquewhite;
+#controls{
+    display: grid;
+    margin: 30px 100px 0px 180px;
+    row-gap: 30px;
+    height: 130px;
 }
+
+button{
+    background-color: #f7e4ac;
+    width: 150px;
+    height: 50px;
+    font-size: 25px;
+    color: #5586e2;
+    box-shadow: 2px 2px 2px 2px #d86c23;
+    border: 2px solid #d86c23;
+    cursor: pointer;
+}
+
 
 .cell {
     font-size: 135px;
@@ -108,14 +117,4 @@ svg {
 .display {
     font-size: 30px;
     background-color: aliceblue;
-}
-
-.restart {
-    border-radius: 20px;
-    font-size: 30px;
-    margin: 30px 0px 0px 50px;
-    cursor: pointer;
-    width: 130px;
-    height: 70px;
-    background-color: antiquewhite;
 }
