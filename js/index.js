@@ -1,15 +1,14 @@
-const point = prompt('Mời nhập số điểm',0);
-console.log('point',typeof point,point);
+let point;
+point = prompt('Nhập số điểm cần để chiến thắng',0);
 
 const cells = Array.from(document.querySelectorAll('.cell'));
-const resetButton = document.querySelector('#reset');
+const resetButton = document.querySelector('.reset');
 const announcer = document.querySelector('.announcer');
 const scoreX = document.querySelector('.turnsX');
 const scoreO = document.querySelector('.turnsO');
 const gradeX = document.querySelector('#score_X');
 const gradeO = document.querySelector('#score_O');
 const restartButton = document.querySelector('.restart');
-
 
 let board = ['','','','','','','','',''];
 let currentPlayer = 'X';
@@ -59,31 +58,33 @@ if (!board.includes(''))
 const announce = (type) => {
     switch(type){
         case PLAYERO_WON:
-            announcer.innerHTML = 'Player <span class="playerO">O</span> won!!!';
             scoreO.textContent=Number(scoreO.textContent)+1;
-            alert("Player O won!");
+            alert("O won!");
+            resetButton.classList.remove('hide');
+            if(scoreO.textContent === point){
+                gradeO.innerText=Number(gradeO.innerText)+1;
+                announcer.innerHTML = 'Player <span class="playerO">O</span> won!!!';
+                announcer.classList.remove('hide');
+                restartButton.classList.remove('hide');
+                resetButton.classList.add('hide')
+            };
             break;  
         case PLAYERX_WON:
-            announcer.innerHTML = 'Player <span class="playerX">X</span> won!!!';
             scoreX.textContent=Number(scoreX.textContent)+1;
-            alert("Player X won!")
+            alert("X won!");
+            resetButton.classList.remove('hide')
+            if (scoreX.textContent === point){
+                gradeX.innerText=Number(gradeX.innerText)+1;
+                announcer.innerHTML = 'Player <span class="playerX">X</span> won!!!';
+                announcer.classList.remove('hide');
+                restartButton.classList.remove('hide');
+                resetButton.classList.add('hide')
+            };
             break;
         case TIE:
-            announcer.innerText = 'Game ended in a draw!';
-            alert('Tie')
+            alert('Game ended in a draw!');
+            resetButton.classList.remove('hide');
     }
-    announcer.classList.remove('hide');
-};
-
-if(Number(scoreO.innerText)===Number(point)){
-    gradeO.innerText=Number(gradeO.innerText)+1;
-    alert('O won');
-    restartButton.classList.remove('hide');
-}
-else if (Number(scoreX.innerText)===Number(point)){
-    gradeX.innerText=Number(gradeX.innerText)+1;
-    alert('X won');
-    restartButton.classList.remove('hide');
 };
 
 const isValidAction = (cell) => {
@@ -115,6 +116,7 @@ const resetBoard = () => {
     board = ['','','','','','','','',''];
     isGameActive= true;
     announcer.classList.add('hide');
+    resetButton.classList.add('hide');
 
     if (currentPlayer === 'O') {
         changePlayer();
@@ -133,6 +135,8 @@ const restartBoard = () => {
     gradeO.innerText='0';
     scoreO.textContent='0';
     scoreX.textContent='0';
+    restartButton.classList.add('hide');
+    point = prompt('Nhập số điểm cần để chiến thắng',0);
 }
 
 cells.forEach( (cell, index) => {
