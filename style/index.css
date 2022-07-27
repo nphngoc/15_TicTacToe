@@ -1,20 +1,23 @@
 *{
-    margin: auto;
-    padding: auto;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
-
-h1{
+h1 {
     color: red;
     font-size: 3.5rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 2rem;
     text-shadow: 3px 3px 4px gray;
 }
-#container {
+#all {
     position: absolute;
-    /* width: 100vw;
-    height: 100vh; */
+    width: 100vw;
+    height: 100vh;
+    background-color: #F5F5F5;
+}
+
+#container {
     display: flex;
     font-family: Helvetica;
     font-weight: 750;
@@ -24,10 +27,10 @@ h1{
     display: grid;
     grid-template-columns: auto auto;
     gap: 5px;
-    width: 200px;
-    height: 100px;
-    background-color: #fcf0f0;
-    margin: 1rem;
+    min-width: 180px;
+    max-height: 100px;
+    background-color: #FFFFFF;
+    margin: 30px;
     border-radius: 50px;
 }
 #score > span{
@@ -41,71 +44,76 @@ h1{
     color: #FF4F4F;
 }
 
-#turns{
+#goals{
     display: grid;
     grid-template-columns: auto;
     width: 150px;
-    height: 300px;
-    gap: 30px;
-    margin: 100px 60px 20px 0px;
-}
-#rectangle {
-    background-color: white;
-}
-#rectangle > button {
-    margin: 30px;
-    border-radius: 50%;
-    border-width: 10px;
-    font-size: 65px;
-    width: 90px;
-    height: 90px;
-}
-#turnsX {
-    color: #2C8DFF;
-    border-color: #2C8DFF;
-}
-#turnsO {
-    color:#FF4F4F;
-    border-color: #FF4F4F;
+    height: 370px;
+    gap: 50px;
+    margin-top: 220px;
+
 }
 
-#version2 {
+#goals > div {
+    background-color: #FFFFFF;
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+text{
+    font-size: 80px;
+}
+
+svg {
+    margin: 24px;
+}
+
+#board {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 10px;
-    background-color: black;
+    background-color: #FFE79E;
     width: 470px;
     height: 470px;
-    /* padding: 15px; */
-    margin: auto;
+    padding: 15px;
+    margin: 150px 0px 0px 50px;
 }
-#version2 > div {
-    background-color:rgb(220, 241, 255);
+#board > div {
+    background-color: #FFFFFF;
     border: 0;
     cursor: pointer;
 }
 
-#reset{
-    border-radius: 5px;
-    font-size: 20px;
-    border: 2px red;
-    margin: 20px 0px 0px 80px;
-    cursor: pointer;
-    color: lightcyan;
-    background-color:rgb(200, 15, 15);
-    height: 40px;
-    width: 90px;
-    font-family: cursive;
+#controls{
+    display: grid;
+    margin: 30px 100px 0px 180px;
+    row-gap: 30px;
+    height: 130px;
 }
 
+button{
+    background-color: #f7e4ac;
+    width: 140px;
+    height: 50px;
+    font-size: 25px;
+    color: rgb(40, 150, 255);
+    box-shadow: 2px 2px 2px 2px #d86c23;
+    border: 2px solid #d86c23;
+    cursor: pointer;
+    font-family: cursive;
+    border-radius: 5px;
+}
+
+
 .cell {
-    font-size: 120px;
+    font-size: 135px;
     width: 150px;
     height: 150px;
 }
 
 .playerX {
-    color: dodgerblue;
+    color: #2C8DFF;
 }
 
 .playerO {
@@ -118,7 +126,5 @@ h1{
 
 .display {
     font-size: 30px;
-    margin-bottom: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: aliceblue;
 }
-
