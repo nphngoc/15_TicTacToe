@@ -137,8 +137,6 @@ const resetBoard = () => {
 
 const reloadGame = () => {
     resetBoard();
-    scoreX.innerText='0';
-    scoreO.innerText='0';
     goalO.textContent='0';
     goalX.textContent='0';
     restartButton.classList.add('hide');
