@@ -139,8 +139,6 @@ const reloadGame = () => {
     resetBoard();
     goalO.textContent='0';
     goalX.textContent='0';
-    restartButton.classList.add('hide');
-    clap.classList.add('hide');
     point = prompt('Nhập số điểm cần để chiến thắng',0);
 }
 
