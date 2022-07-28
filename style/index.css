@@ -3,6 +3,13 @@
     padding: 0;
     text-align: center;
 }
+h1 {
+    color: red;
+    font-size: 3.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 2rem;
+    text-shadow: 3px 3px 4px gray;
+}
 
 #all {
     position: absolute;
@@ -19,7 +26,7 @@
     display: grid;
     grid-template-columns: auto auto;
     gap: 5px;
-    width: 200px;
+    width: 180px;
     height: 100px;
     background-color: #FFFFFF;
     margin: 30px;
@@ -36,19 +43,20 @@
     color: #FF4F4F;
 }
 
-#turns{
+#goals{
     display: grid;
     grid-template-columns: auto;
     width: 150px;
     height: 370px;
     gap: 70px;
-    margin-top: 250px;
+    margin: 150px 10px 20px 0px;
 }
 
-#turns > div {
+#goals > div {
     background-color: #FFFFFF;
     width: 150px;
     height: 150px;
+    border-radius: 5px;
 }
 
 text{
@@ -59,7 +67,7 @@ svg {
     margin: 24px;
 }
 
-#version2 {
+#board {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 10px;
@@ -67,9 +75,9 @@ svg {
     width: 470px;
     height: 470px;
     padding: 15px;
-    margin: 150px 0px 0px 110px;
+    margin: 100px 0px 0px 50px;
 }
-#version2 > div {
+#board > div {
     background-color: #FFFFFF;
     border: 0;
     cursor: pointer;
@@ -77,22 +85,25 @@ svg {
 
 #controls{
     display: grid;
-    margin: 30px 100px 0px 180px;
+    margin: 50px 0px 0px 100px;
     row-gap: 30px;
     height: 130px;
 }
 
 button{
     background-color: #f7e4ac;
-    width: 150px;
+    width: 140px;
     height: 50px;
     font-size: 25px;
-    color: #5586e2;
+    color: rgb(40, 150, 255);
     box-shadow: 2px 2px 2px 2px #d86c23;
     border: 2px solid #d86c23;
     cursor: pointer;
+    font-family: cursive;
+    border-radius: 5px;
+    margin-left: 10%;
+    
 }
-
 
 .cell {
     font-size: 135px;
@@ -115,4 +126,8 @@ button{
 .display {
     font-size: 30px;
     background-color: aliceblue;
+}
+
+img{
+    margin: 120px 100px 0px 0px;
 }
