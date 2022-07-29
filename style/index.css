@@ -4,6 +4,10 @@
     text-align: center;
 }
 
+#abc {
+    width: auto;
+    height: 50px;
+
 h1{
     color: red;
     font-size: 45px;
@@ -105,7 +109,6 @@ button{
     cursor: pointer;
     border-radius: 5px;
 }
-
 
 .cell {
     font-size: 135px;
