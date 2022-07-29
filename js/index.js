@@ -15,9 +15,9 @@ let board = ['','','','','','','','',''];
 let currentPlayer = 'X';
 let isGameActive = true;
 
-const PLAYERX_WON = 'PLAYERX_WON';
-const PLAYERO_WON = 'PLAYERO_WON';
-const TIE = 'TIE';
+const playerX_won = 'playerX_won';
+const playerO_won = 'playerO_won';
+const tie = 'tie';
 
 function checkWinCondition() {
     let roundWon = false;
@@ -44,19 +44,22 @@ function checkWinCondition() {
         roundWon = true;
     }
 
+    else if (!board.includes(''))
+    {
+        announce(tie);
+    }
+    
+
 if (roundWon) {
-        announce(currentPlayer === 'X' ? PLAYERX_WON : PLAYERO_WON);
+        announce(currentPlayer === 'X' ? playerX_won : playerO_won);
         isGameActive = false;
         return;
     }
-
-if (!board.includes(''))
-    announce(TIE);
 }
 
 const announce = (type) => {
     switch(type){
-        case PLAYERO_WON:
+        case playerO_won:
             goalO.textContent=Number(goalO.textContent)+1;
             alert("O won!");
             resetButton.classList.remove('hide');
@@ -69,9 +72,9 @@ const announce = (type) => {
                 clap.classList.remove('hide');
             };
             break;  
-        case PLAYERX_WON:
+        case playerX_won:
             goalX.textContent=Number(goalX.textContent)+1;
-            alert("X won!");
+            alert("X won!!!");
             resetButton.classList.remove('hide')
             if (goalX.textContent === point){
                 scoreX.innerText=Number(scoreX.innerText)+1;
@@ -82,8 +85,8 @@ const announce = (type) => {
                 clap.classList.remove('hide');
             };
             break;
-        case TIE:
-            alert('Game ended in a draw!');
+        case tie:
+            alert('Game ended in a draw!!!');
             resetButton.classList.remove('hide');
     }
 };
@@ -139,6 +142,8 @@ const reloadGame = () => {
     resetBoard();
     goalO.textContent='0';
     goalX.textContent='0';
+    restartButton.classList.add('hide');
+    clap.classList.add('hide');
     point = prompt('Nhập số điểm cần để chiến thắng',0);
 }
 
