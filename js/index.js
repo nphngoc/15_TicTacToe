@@ -60,7 +60,7 @@ const announce = (type) => {
     switch(type){
         case playerO_won:
             goalO.textContent=Number(goalO.textContent)+1;
-            alert("O won!");
+            alert("O won!!!");
             resetButton.classList.remove('hide');
             if(goalO.textContent === point){
                 scoreO.innerText=Number(scoreO.innerText)+1;
