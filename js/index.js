@@ -49,7 +49,6 @@ function checkWinCondition() {
         announce(tie);
     }
     
-
 if (roundWon) {
         announce(currentPlayer === 'X' ? playerX_won : playerO_won);
         isGameActive = false;
